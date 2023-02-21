@@ -2,7 +2,7 @@ import axios from 'axios'
 import { empty } from 'helpers'
 
 export const api = axios.create({
-  baseURL: process.env.REACT_APP_APIURL,
+  baseURL: process.env.REACT_APP_API_V2_URL,
   timeout: 10000,
 })
 

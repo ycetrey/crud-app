@@ -5,7 +5,6 @@ import { object, string, TypeOf } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Input from 'components/atoms/Input/Input'
 import { useAuth } from 'hooks/useAuth'
-import { useToasty } from 'hooks/useToasty'
 
 const loginSchema = object({
   username: string().min(1, 'Usuário é requerido'),
@@ -18,7 +17,7 @@ const loginSchema = object({
 type ILogin = TypeOf<typeof loginSchema>
 
 export const LoginForm = () => {
-  const { error, signIn } = useAuth()
+  const { signIn } = useAuth()
   const defaultValues: ILogin = {
     username: '',
     password: '',
@@ -30,7 +29,7 @@ export const LoginForm = () => {
   })
 
   const onSubmitHandler: SubmitHandler<ILogin> = async (values: ILogin) => {
-    const login = await signIn(values)
+    await signIn(values)
   }
 
   return (

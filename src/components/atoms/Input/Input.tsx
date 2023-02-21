@@ -53,7 +53,7 @@ const Input = ({ name, ...otherProps }: InputProps) => {
   useEffect(() => {
     const message = errorRef?.message || ''
     if (message) setMessage(message)
-  }, [errors])
+  }, [errors, errorRef?.message])
 
   return (
     <Controller

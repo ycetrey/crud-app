@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { empty } from 'helpers'
-import { api } from 'services/axios'
+import { api } from 'configs/api/v2/axios'
 import { useToasty } from './useToasty'
 export type ErrorProps = {
   error?: string
